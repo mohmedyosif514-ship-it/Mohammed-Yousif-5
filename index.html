@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Penilaian Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Nilai Akhir & Predikat</h2>
+        
+        <!-- Informasi Bobot (Dihasilkan oleh Perulangan JS) -->
+        <div class="info-box">
+            <h4>Bobot Penilaian:</h4>
+            <ul id="daftar-bobot"></ul>
+        </div>
+
+        <!-- Form Input Nilai -->
+        <form id="form-nilai">
+            <div class="input-group">
+                <label for="tugas">Nilai Tugas (20%):</label>
+                <input type="number" id="tugas" min="0" max="100" required placeholder="0 - 100">
+            </div>
+            
+            <div class="input-group">
+                <label for="uts">Nilai UTS (35%):</label>
+                <input type="number" id="uts" min="0" max="100" required placeholder="0 - 100">
+            </div>
+            
+            <div class="input-group">
+                <label for="uas">Nilai UAS (45%):</label>
+                <input type="number" id="uas" min="0" max="100" required placeholder="0 - 100">
+            </div>
+
+            <button type="button" onclick="hitungNilai()">Hitung Nilai</button>
+        </form>
+
+        <!-- Tempat Menampilkan Hasil Percabangan -->
+        <div id="hasil" class="hasil-box" style="display: none;">
+            <h3>Hasil Evaluasi</h3>
+            <p>Nilai Akhir: <strong id="nilai-akhir">0</strong></p>
+            <p>Predikat: <strong id="predikat">-</strong></p>
+            <p>Keterangan: <span id="keterangan">-</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
